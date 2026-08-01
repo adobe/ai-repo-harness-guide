@@ -17,9 +17,10 @@ updates:
     # Check for updates once per day, Github defaults to random time every day.
     schedule:
       interval: daily
-  # Enable version updates for Python dependencies
-  - package-ecosystem: "pip"
-    # Github knows to look for pyproject.toml or requirements.txt
+  # Enable version updates for Python dependencies (uv.lock is the source of truth,
+  # regenerated from pyproject.toml via `make lock` — the "pip" ecosystem does not
+  # parse or update uv.lock, so this repo needs "uv" instead)
+  - package-ecosystem: "uv"
     directory: "/"
     # Check for updates once per day, Github defaults to random time every day.
     schedule:
