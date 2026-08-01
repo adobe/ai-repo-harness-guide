@@ -1,0 +1,90 @@
+# docs/SETUP.md — Local Development Setup
+
+<!-- Derived from the actual repository — read code, config files, Makefile, and Dockerfiles.
+     Every command, env var name, and file path must be verified against the codebase before
+     writing. Write [verify with maintainers] if a value cannot be confirmed.
+
+     Topic ownership: constraint values (coverage %, linting rules, SLA targets) belong in
+     INVARIANTS.md — reference them with a link, never restate them here.
+     Test strategy, coverage targets, and fixture patterns belong in TESTING.md — the Running
+     Tests section must link there rather than duplicate that content. -->
+
+## Prerequisites
+
+<!-- System requirements: OS, language runtime version, required CLI tools.
+     Derive version requirements from .tool-versions, .nvmrc, pyproject.toml, go.mod, etc. -->
+
+- **OS**: TODO
+- **Runtime**: TODO <!-- e.g. Python 3.11+, Node 20+, Go 1.22+ -->
+- **Required tools**: TODO <!-- e.g. Docker, make, psql -->
+
+## Installation
+
+<!-- Step-by-step: clone → environment → dependencies. Show exact commands. -->
+
+```bash
+git clone <repo-url>
+cd <repo-name>
+
+# Create and activate environment (if applicable)
+TODO
+
+# Install dependencies
+TODO
+```
+
+## Configuration
+
+<!-- Environment variables required to run the service locally.
+     Show the variable name and an example value — never a real secret.
+     Derive names from code (os.getenv, process.env, config files). -->
+
+Copy `.env.example` to `.env` and fill in the values:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Example | Purpose |
+|---|---|---|
+| `TODO` | `TODO` | TODO |
+
+<!-- If a local database or external service is required, add setup steps here. -->
+
+## Running the Service
+
+```bash
+make run        # start the service
+make dev        # start with hot-reload (if available)
+```
+
+<!-- Note the local URL (e.g. http://localhost:8080). Port is config-driven — derive from
+     .env.example or the Makefile rather than hardcoding. -->
+
+Service available at: `TODO` (see `.env` → `PORT` or equivalent)
+
+## Running Tests
+
+<!-- One sentence + link only. Do not restate test strategy, coverage targets, test
+     organisation, or fixture patterns here — TESTING.md owns those topics. -->
+
+Run the full test suite with `make test`. See [TESTING.md](TESTING.md) for test organisation, coverage targets, and fixture patterns.
+
+## Running Validation
+
+```bash
+make help       # list all available targets
+make check      # run all validation (lint, typecheck, test)
+```
+
+<!-- List what make check includes if it is not self-documenting. -->
+
+## Troubleshooting
+
+<!-- Common setup failures and their fixes. Derive from Makefile, CI logs, or known issues.
+     Add entries as real failures are observed — do not invent hypothetical problems. -->
+
+### TODO: common issue
+
+**Symptom**: TODO
+**Fix**: TODO

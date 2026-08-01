@@ -1,0 +1,21 @@
+{
+  "name": "repo-harness",
+  "displayName": "Repo Harness Skills",
+  "description": "Build, migrate, and audit repository harnesses for AI-assisted coding.",
+  "version": "1.0.0",
+  "publisher": "adobe",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": ["Other"],
+  "contributes": {
+    "chatSkills": [
+      {
+        "path": "./skills/harness-setup/SKILL.md"
+      },
+      {
+        "path": "./skills/harness-inspect/SKILL.md"
+      }
+    ]
+  }
+}

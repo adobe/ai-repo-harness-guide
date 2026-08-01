@@ -1,0 +1,32 @@
+# AGENTS.md — [Module Name]
+
+**Scope**: this file governs `<path/to/module>/` only.
+
+**Navigation**: ↑ [Root AGENTS.md](<relative-path-to-root>/AGENTS.md) · [INVARIANTS.md](<relative-path-to-root>/INVARIANTS.md)
+
+<!-- Do not repeat root constraints — reference them. Only document what differs or tightens for this module.
+     Omit any section below that has nothing genuinely local to say. An omitted section is correct;
+     a padded section actively misleads. -->
+
+## Local Architecture
+
+<!-- Omit if the module's architecture is already covered in docs/ARCHITECTURE.md.
+     If genuinely local: Mermaid diagram or description of components specific to this module.
+     Derive from actual entry points and imports — do not invent components. -->
+
+## Local Invariants
+
+<!-- Omit if all rules for this module are already in root INVARIANTS.md.
+     If genuinely local: rules that tighten or extend root guidance for this module only.
+     Format: [status] <constraint> — *Enforced by: <make target / human review / not yet enforced>*
+     Status: [verified-against-code] | [proposed] | [awaiting-CI]. Use only when it differentiates this item from others. -->
+
+## Local Footguns
+
+<!-- Omit if no module-specific footguns exist beyond what root AGENTS.md already covers.
+     If genuinely local: tricky areas specific to this module — what goes wrong, why, and what to watch for. -->
+
+## Local Workflows
+
+<!-- Omit if agent workflows for this module are the same as root guidance.
+     If genuinely local: how agents should approach common tasks in this module, if different from root guidance. -->

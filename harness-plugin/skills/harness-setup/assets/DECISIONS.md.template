@@ -1,0 +1,44 @@
+# docs/DECISIONS.md — Architecture Decision Records
+
+<!-- Decision records capture WHY a technical choice was made — the alternatives considered
+     and why this path was chosen. Code shows what; only developers can provide why.
+
+     Do not generate entries without developer input. Use the three-step dialogue in
+     references/docs.md (git archaeology → developer dialogue → transcribe).
+     The ONLY field safe to auto-generate is "Agents Should Know" — it concerns current
+     code implications derivable from the decision and the codebase.
+
+     Never fabricate a date, status, context, or decision. A blank TODO invites correction;
+     a fabricated value silently misleads every agent that reads this file as ground truth. -->
+
+## [Decision Title]
+
+**Date**: YYYY-MM-DD <!-- from git log; write TODO if not derivable -->
+**Status**: Accepted <!-- or: Deprecated | Superseded by [Title](link) -->
+**Source**: <!-- PR #N (link), wiki page, design doc, or "rationale not available" -->
+
+**Context**
+
+<!-- What was the situation or problem that drove this decision? Use the developer's words. -->
+
+TODO — not derivable from code
+
+**Decision**
+
+<!-- What was chosen, and the key reasoning. Use the developer's words. -->
+
+TODO — not derivable from code
+
+**Consequences**
+
+<!-- What becomes easier or harder as a result. Omit this section entirely if not available. -->
+
+TODO — not derivable from code
+
+**Agents Should Know**
+
+<!-- What an agent working in this codebase needs to know from this decision:
+     which parts of the code reflect it, what not to change, what to watch out for.
+     Safe to derive from the decision above and the current codebase. -->
+
+TODO

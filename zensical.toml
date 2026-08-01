@@ -1,0 +1,98 @@
+[project]
+site_name = "Repository Harnesses for AI Coding Agents"
+site_description = "A practical guide for building repository harnesses that make AI-assisted coding reliable and repeatable"
+site_author = "Arne Franken"
+site_url = "https://opensource.adobe.com/ai-repo-harness-guide/"
+docs_dir = "guide"
+
+nav = [
+  {"Home" = "README.md"},
+  {"Guide" = [
+    {"Introduction" = "00-Introduction.md"},
+    {"1 · Beyond Prompting" = "01-Beyond-Prompting.md"},
+    {"2 · What a Harness Is" = "02-What-a-Harness-Is.md"},
+    {"3 · Five Control Layers" = "03-Five-Control-Layers.md"},
+    {"4 · Harness Components" = "04-Harness-Components.md"},
+    {"5 · How Agents Navigate" = "05-How-Agents-Navigate.md"},
+    {"6 · Reference Layout" = "06-Reference-Layout.md"},
+    {"7 · Build Your Harness" = "07-Build-Your-Harness.md"},
+    {"8 · Migrate Your Harness" = "08-Migrate-Your-Harness.md"},
+    {"9 · Keep It Current" = "09-Keep-It-Current.md"},
+  ]},
+  {"Skills" = [
+    {"harness-setup" = [
+      {"Overview" = "skills/harness-setup/README.md"},
+      {"Skill Instructions" = "skills/harness-setup/SKILL.md"},
+      {"Changelog" = "skills/harness-setup/CHANGELOG.md"},
+      {"Discovery" = "skills/harness-setup/references/discovery.md"},
+      {"Bootstrap" = "skills/harness-setup/references/bootstrap.md"},
+      {"Agents" = "skills/harness-setup/references/agents.md"},
+      {"CLAUDE.md" = "skills/harness-setup/references/claude.md"},
+      {"Skills" = "skills/harness-setup/references/skills.md"},
+      {"Makefile" = "skills/harness-setup/references/makefile.md"},
+      {"README" = "skills/harness-setup/references/readme.md"},
+      {"Docs" = "skills/harness-setup/references/docs.md"},
+      {"Inventory" = "skills/harness-setup/references/inventory.md"},
+      {"Validation" = "skills/harness-setup/references/validation.md"},
+      {"Review Panel" = "skills/harness-setup/references/review-panel.md"},
+      {"Before/After Probe" = "skills/harness-setup/references/before-after-probe.md"},
+    ]},
+    {"harness-inspect" = [
+      {"Overview" = "skills/harness-inspect/README.md"},
+      {"Skill Instructions" = "skills/harness-inspect/SKILL.md"},
+      {"Changelog" = "skills/harness-inspect/CHANGELOG.md"},
+      {"Health Check" = "skills/harness-inspect/references/health-check.md"},
+      {"Full Audit" = "skills/harness-inspect/references/full-audit.md"},
+      {"Before/After Probe" = "skills/harness-inspect/references/before-after-probe.md"},
+    ]},
+  ]},
+  {"Appendix" = [
+    {"FAQ" = "FAQ.md"},
+    {"Reading List" = "READING.md"},
+    {"Changelog" = "CHANGELOG.md"},
+  ]},
+]
+
+[project.validation]
+invalid_links = false
+invalid_link_anchors = false
+unresolved_references = false
+
+[project.theme]
+language = "en"
+features = [
+  "content.code.copy",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.toc]
+permalink = true
+slugify = {object = "pymdownx.slugs.slugify", kwds = {case = "lower"}}
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true

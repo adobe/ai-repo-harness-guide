@@ -1,0 +1,73 @@
+# docs/TESTING.md — Testing Strategy
+
+<!-- Derived from the actual test suite — read test files, conftest.py / jest.config /
+     equivalent test configuration, and the Makefile.
+
+     Topic ownership: coverage targets and quality thresholds belong in INVARIANTS.md —
+     reference them with a link, never restate the number here. -->
+
+## Testing Philosophy
+
+<!-- What kinds of bugs are worth catching; unit/integration/e2e balance; rationale for
+     the coverage target. Do not state the coverage percentage — link to INVARIANTS.md. -->
+
+TODO — describe the test strategy and what this test suite is optimised to catch.
+
+Coverage target: see [INVARIANTS.md](../INVARIANTS.md).
+
+## Test Organisation
+
+<!-- File structure, naming conventions, how to find tests for a given module.
+     Derive from the actual layout of the tests/ directory. -->
+
+```
+tests/
+├── TODO
+```
+
+- **Naming**: TODO <!-- e.g. test_<module>.py, *.spec.ts -->
+- **Finding tests for a module**: TODO <!-- e.g. mirror src/ structure, co-located __tests__ -->
+
+## Unit Testing Guidelines
+
+<!-- What to unit test; what to avoid; common patterns used in this codebase.
+     Derive from existing tests — describe what is already there, not a generic ideal. -->
+
+- **What to unit test**: TODO
+- **What not to unit test**: TODO
+- **Common patterns**: TODO
+
+## Integration Testing Guidelines
+
+<!-- What to integration test; how to set up test infrastructure (database, queues, etc.).
+     Derive from existing integration tests and CI configuration. -->
+
+- **What to integration test**: TODO
+- **Test infrastructure setup**: TODO <!-- e.g. docker-compose up -d, make test-db -->
+
+## Critical Paths
+
+<!-- Operations that MUST always have test coverage — derive from INVARIANTS.md and
+     known failure modes. Link to the relevant INVARIANTS.md constraint where applicable. -->
+
+- TODO — see [INVARIANTS.md](../INVARIANTS.md) for the constraint that makes this critical
+
+## Running Tests
+
+```bash
+make test           # full test suite
+make test-unit      # unit tests only (if target exists)
+make test-int       # integration tests only (if target exists)
+make coverage       # run with coverage report (if target exists)
+```
+
+<!-- Derive available targets from the Makefile. Remove lines for targets that don't exist. -->
+
+## Mocking & Fixtures
+
+<!-- What to mock and why; how fixtures are organised; shared fixture patterns.
+     Derive from conftest.py, __fixtures__/, or equivalent. -->
+
+- **Mock policy**: TODO <!-- e.g. mock external services; never mock the database -->
+- **Fixtures location**: TODO <!-- e.g. tests/fixtures/, conftest.py -->
+- **Common mocks**: TODO

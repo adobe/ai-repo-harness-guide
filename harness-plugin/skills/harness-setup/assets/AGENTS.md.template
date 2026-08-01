@@ -1,0 +1,31 @@
+# AGENTS.md — Repository Constraints & Context
+
+> **Read [INVARIANTS.md](INVARIANTS.md) first** — it lists non-negotiable constraints that apply to all work in this repository.
+
+## Repository Overview
+
+<!-- One-line service description. Briefly describe the main components and how they relate, in prose.
+     Do not add a diagram here — the canonical diagram lives in docs/ARCHITECTURE.md.
+     Once Phase 3 is complete, add: see [Architecture](docs/ARCHITECTURE.md) -->
+
+## Module Context
+
+<!-- Links to module-level AGENTS.md files.
+     Add entries as high-risk subdirectories are identified during Phase 2.
+     Format: - [path/to/module/AGENTS.md](path/to/module/AGENTS.md) — one-line description -->
+
+## Agent Authorization
+
+### [RoleName]
+- Authority:
+- Escalation:
+
+## Conventions
+
+- **Commits & branches**: see [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) — single source of truth
+
+## Known Footguns
+
+<!-- Document tricky areas where agents and engineers commonly make mistakes.
+     Format: ### Footgun Name / what it is / why it happens / what to watch for
+     Best source: incident history and code review patterns. -->

@@ -1,0 +1,30 @@
+# INVARIANTS.md — Hard Constraints
+
+These are non-negotiable. Violations require explicit human sign-off.
+All constraints are enforced here; `AGENTS.md` links to this file rather than restating them.
+
+<!-- Format each constraint as:
+     [status] <constraint statement> — *Enforced by: <make target / human review / not yet enforced>*
+     Status values: [verified-against-code] (file:line citation exists) | [proposed] (unconfirmed, needs code verification) | [awaiting-CI] (confirmed but automation not yet wired)
+     Use a status marker only when it differentiates this item from others in the same list.
+     Do not prefix every bullet with the same symbol — uniform markers add no information. -->
+
+## Security
+
+- [status] [constraint] — *Enforced by: [make target / human review / not yet enforced]*
+
+## Performance
+
+- [status] [constraint] — *Enforced by: [make target / human review / not yet enforced]*
+
+## Testing & Quality
+
+- [status] [constraint] — *Enforced by: [make target / human review / not yet enforced]*
+
+## Data Integrity
+
+- [status] [constraint] — *Enforced by: [make target / human review / not yet enforced]*
+
+## API Contract
+
+- [status] [constraint] — *Enforced by: [make target / human review / not yet enforced]*

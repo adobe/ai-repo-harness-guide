@@ -1,0 +1,55 @@
+# Contributing
+
+<!-- Location: docs/CONTRIBUTING.md (canonical). GitHub recognises this location natively
+     alongside the repo root and .github/ — no need to use the tool-specific directory.
+
+     Topic ownership: constraint values (coverage %, linting rules, type-checking requirements)
+     belong in INVARIANTS.md — the Quality Standards section must link there, never restate them. -->
+
+## For Everyone
+
+<!-- Code review process, what makes a good PR, required checks before submitting.
+     Derive from Makefile targets and any existing CI configuration. -->
+
+- All contributions must pass `make check` before submitting
+- TODO: describe the code review process and PR expectations
+
+## For Humans
+
+<!-- Branch naming, commit message style, PR description expectations. -->
+
+- **Branches**: TODO <!-- e.g. feat/, fix/, chore/ prefixes -->
+- **Commits**: TODO <!-- e.g. Conventional Commits, imperative mood -->
+- **PRs**: TODO <!-- what a good description includes -->
+
+## Quality Standards
+
+<!-- One sentence + link only. Do not restate constraint values here — INVARIANTS.md owns them. -->
+
+All contributions must pass `make check`. Constraint values (coverage targets, linting rules, type-checking requirements) are in [INVARIANTS.md](../INVARIANTS.md).
+
+## Common Tasks
+
+<!-- Task methodology belongs in the relevant SKILL.md, not here — restating it creates two
+     sources of truth that will drift. This section is a directory: one line per task type,
+     naming the skill that covers it. If no skill exists for a task yet, note it as TODO.
+
+     Discover available skills with: ls .agents/skills/ -->
+
+<!-- Example pattern (replace with actual skills found in .agents/skills/):
+| Task | Skill |
+|---|---|
+| Code review | [code-review](.agents/skills/code-review/SKILL.md) |
+| Write tests | [write-tests](.agents/skills/write-tests/SKILL.md) |
+| Implement a feature | [implementation](.agents/skills/implementation/SKILL.md) |
+-->
+
+## Escalation Checklist
+
+Any of the following requires human review before merge:
+
+- [ ] Change would violate a constraint in [INVARIANTS.md](../INVARIANTS.md)
+- [ ] Security-sensitive change (auth, credentials, PII handling)
+- [ ] Database schema change
+- [ ] API breaking change (removed or renamed endpoint, changed contract)
+- [ ] Large refactor crossing module boundaries

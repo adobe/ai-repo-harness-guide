@@ -1,0 +1,55 @@
+{
+  "skill_name": "harness-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just created a new TypeScript Node.js API service. There's no AGENTS.md, no Makefile, and no .agents/ directory. Set up a harness.",
+      "expected_output": "scan.sh exits 1 (no artifacts). Create path runs all four phases: discovery captures language/constraints, bootstrap creates AGENTS.md, INVARIANTS.md, CLAUDE.md shim, Makefile, and at least one skill using the asset templates. docs/ created. Validation passes.",
+      "assertions": [
+        "scan.sh output logged before any files are created",
+        "CLAUDE.md contains only @-references",
+        "Makefile includes a check target and the agents-only comment",
+        "AGENTS.md is under 200 lines",
+        "Before/after probe run at start and end"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "My repo has a .cursorrules file with coding standards and a .claude/commands/ folder with agent instructions. Set up a canonical harness.",
+      "expected_output": "scan.sh exits 0 (non-canonical files found). Migrate path runs. Inventory identifies M2. .cursorrules and .claude/ content moves to .agents/skills/. CLAUDE.md reduced to @-references. Originals deleted only after content confirmed in canonical location.",
+      "assertions": [
+        "scan.sh exits 0 and lists .cursorrules as non-canonical",
+        "Inventory prompt run before any changes",
+        "M2 selected based on inventory output",
+        ".cursorrules content appears in at least one SKILL.md under .agents/skills/",
+        "CLAUDE.md contains only @-references after migration",
+        "Original .cursorrules deleted after migration confirmed"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "My AGENTS.md is 320 lines and mixes hard constraints with operational context. It was never split into AGENTS.md + INVARIANTS.md.",
+      "expected_output": "scan.sh exits 0 (canonical AGENTS.md found). Migrate path runs. Inventory identifies M3 (and possibly M4). M3 runs first: hard constraints extracted to INVARIANTS.md, AGENTS.md trimmed to under 200 lines. CLAUDE.md updated to reference both.",
+      "assertions": [
+        "scan.sh exits 0 and lists AGENTS.md as canonical",
+        "M3 runs before any other migration",
+        "Hard constraints moved to INVARIANTS.md with Enforced by: annotations",
+        "AGENTS.md under 200 lines after migration",
+        "CLAUDE.md references both AGENTS.md and INVARIANTS.md"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I have a CLAUDE.md with 60 lines of real content: stack description, security rules, and coding conventions. I also have an incomplete docs/ with no ARCHITECTURE.md.",
+      "expected_output": "scan.sh exits 0 (CLAUDE.md with real content found, docs noted). Migrate path runs. Inventory identifies M1 and M6. M1 runs first: content classified and migrated to AGENTS.md and INVARIANTS.md, CLAUDE.md reduced to shim. M6 fills docs/ gaps.",
+      "assertions": [
+        "scan.sh exits 0 and classifies CLAUDE.md as real-content",
+        "M1 runs before M6",
+        "Security rules appear in INVARIANTS.md after M1",
+        "CLAUDE.md contains only @-references after M1",
+        "docs/ARCHITECTURE.md created by M6",
+        "No content from old CLAUDE.md is lost"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+# Agents: run only make targets listed here. No direct shell commands.
+# Adapt the commands below to your toolchain — examples show Python and Node.js variants.
+
+.DEFAULT_GOAL := help
+
+# ─── Help ────────────────────────────────────────────────────────────────────
+
+.PHONY: help
+help: ## Show available commands
+	@echo "Usage: make <target>"
+	@echo ""
+	@echo "Available targets:"
+	@awk 'BEGIN {FS=":.*## "}; /^[a-zA-Z0-9_-]+:.*## / { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
+
+# ─── Development ─────────────────────────────────────────────────────────────
+
+.PHONY: install
+install:        ## Install dependencies
+	# Python:  pip install -e ".[dev]"   or   uv sync
+	# Node.js: npm install               or   pnpm install
+
+.PHONY: build
+build:          ## Build the project
+	# Python:  python -m build
+	# Node.js: npm run build
+
+.PHONY: run
+run:            ## Start the service locally
+	# Python:  uvicorn app.main:app --reload
+	# Node.js: npm start
+
+.PHONY: dev
+dev:            ## Start in watch/hot-reload mode (if applicable)
+	# Python:  uvicorn app.main:app --reload
+	# Node.js: npm run dev
+
+# ─── Validation (most important — agents run these) ───────────────────────────
+
+.PHONY: test
+test:           ## Run all tests with coverage
+	# Python:  pytest --cov=src --cov-report=term-missing
+	# Node.js: npm test -- --coverage
+
+.PHONY: lint
+lint:           ## Run linters
+	# Python:  ruff check .
+	# Node.js: eslint .
+
+.PHONY: format
+format:         ## Auto-format code
+	# Python:  ruff format .
+	# Node.js: prettier --write .
+
+.PHONY: typecheck
+typecheck:      ## Run type checker
+	# Python:  ty check .
+	# Node.js: tsc --noEmit
+
+.PHONY: check
+check: lint typecheck test  ## Run all validation (lint + typecheck + test)
+
+# ─── Maintenance ──────────────────────────────────────────────────────────────
+
+.PHONY: clean
+clean:          ## Remove build artifacts
+	rm -rf dist/ build/ .coverage .pytest_cache __pycache__
+	# Node.js: rm -rf dist/ node_modules/.cache

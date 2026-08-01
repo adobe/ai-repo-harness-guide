@@ -1,0 +1,120 @@
+# docs/ARCHITECTURE.md — System Architecture
+
+<!-- Structured using the C4 model (https://c4model.com/):
+       L1 System Context → System Overview section (diagram)
+       L2 Containers     → Key Components / Level 2
+       L3 Components     → Key Components / Level 3
+       L4 Code           — omitted; class-level detail is a staleness vector
+
+     Generated from code observation + developer review. Every named identifier
+     (env var, config flag, file path, class name, queue name, endpoint) must have a
+     file:line citation. Write [verify with maintainers] if none found — never invent.
+
+     Excluded from all sections (config-driven values that drift immediately):
+     port numbers, socket addresses, pool sizes, thread counts, connection limits,
+     timeout/retry/backoff values, file sizes, payload limits, hardcoded counts of any kind,
+     individual class/function names, framework version pins, internal middleware
+     with no external failure surface. Use category descriptions instead of counts.
+
+     Generation process: run component review (Step 1) before producing any diagram.
+     See references/docs.md for the full creation workflow including trace reconciliation. -->
+
+## System Overview
+
+<!-- C4 Level 1 — System Context: the system in its environment (users and external systems).
+     Mermaid diagram rules:
+     - Include only confirmed components and connections from the Step 1 review
+     - Every inferred or uncertain connection must carry a [verify: path/to/file:line] edge label
+     - Node labels: category descriptions only — "PostgreSQL (multi-tenant)" not "PostgreSQL (3 replicas)"
+     If diagram based on static analysis only, add: "Diagram based on static analysis only —
+     runtime behavior unverified." -->
+
+```mermaid
+graph TD
+    A[Component] -->|[verify: path/to/file:line]| B[Component]
+```
+
+<!-- One sentence per component explaining its role. -->
+
+## Data Flow
+
+<!-- One paragraph per diagram edge, in top-to-bottom diagram order. Cite sources inline (file:line).
+     Mark conflicts with prior context as [reconcile: description] rather than silently resolving.
+     If generated without the outline-confirm step, prepend this callout: -->
+> ⚠️ **Unconfirmed draft** — generated in one pass without step confirmation. Treat claims as unverified until reviewed by a developer.
+
+TODO
+
+## Key Components
+
+<!-- C4 Levels 2 and 3 (https://c4model.com/). Level 4 (Code) is omitted — class-level
+     detail drifts immediately and is a staleness vector.
+     Omit Level 3 for simple containers that don't warrant decomposition.
+
+     Enumeration sources by category:
+     - Processes (deployable units): Dockerfiles, Procfiles, deployment manifests, systemd units
+     - Data stores: DATABASE_URL, REDIS_URL, S3_BUCKET, or equivalent connection string env vars
+     - Messaging: QUEUE_*, TOPIC_*, SQS_*, SNS_* env var patterns; queue/topic config files
+     - External services: API-client modules, SDK imports, *_API_KEY / *_API_URL env var patterns
+     - Observability sinks: monitoring/tracing SDK imports (NewRelic, Datadog, OpenTelemetry, etc.)
+
+     Discriminator: if this thing failed at runtime, would the system fail in a way a reader
+     of this document needs to anticipate? Include if yes, exclude otherwise. -->
+
+### Level 2 — Containers
+
+<!-- Deployable processes, data stores, queues, and external services. -->
+
+#### [Container Name]
+
+- **Role**: what it does, in one sentence
+- **Interfaces**: how other containers interact — protocol and contract, not port number
+- **Constraints**: [INVARIANTS.md §relevant-section](../INVARIANTS.md) — do not restate here
+- **Gotcha**: one non-obvious failure mode or operational quirk
+
+### Level 3 — Components
+
+<!-- Named sub-systems inside a container. Use only for containers complex enough to warrant
+     decomposition. Same four-field template as Level 2. Omit this entire section for simple containers. -->
+
+#### [Container Name] → [Component Name]
+
+- **Role**: what it does, in one sentence
+- **Interfaces**: how other components interact with it
+- **Constraints**: [INVARIANTS.md §relevant-section](../INVARIANTS.md) — do not restate here
+- **Gotcha**: one non-obvious failure mode or operational quirk
+
+## Performance Characteristics
+
+<!-- SLA targets: reference INVARIANTS.md — do not restate constraint values here.
+     Actual measurements: include if they exist (cite source and date).
+     Do not invent latency numbers. -->
+
+- **SLA targets**: see [INVARIANTS.md](../INVARIANTS.md)
+- **Known bottlenecks**: TODO
+- **Unmeasured paths**: [TBD — measure in staging]
+
+## Security Architecture
+
+- **Credential management**: TODO <!-- how secrets are stored and accessed -->
+- **Session handling**: TODO
+- **Data protection**: TODO <!-- encryption at rest/transit, PII handling -->
+- **Sensitive operations**: TODO <!-- which operations require elevated access or audit trails -->
+
+## Deployment
+
+<!-- Topology category only — no numeric instance or replica counts. -->
+
+- **Topology**: TODO <!-- single-instance | horizontally-scaled | multi-region -->
+- **Load balancing**: TODO
+- **State stores**: TODO <!-- what they are and their role; no counts -->
+- **Scaling model**: TODO <!-- manual | auto-scaling trigger | etc. -->
+
+## Configuration Layers
+
+<!-- Include if any config files exist (YAML, .env, .properties, .toml, .ini, JSON, or similar).
+     If multiple layers, describe override precedence. Omit this section if no config files exist. -->
+
+| Layer | File / Directory | Purpose | Controls | Read by |
+|---|---|---|---|---|
+| TODO | | | | |

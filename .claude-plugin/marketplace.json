@@ -1,0 +1,17 @@
+{
+  "name": "repo-harness",
+  "owner": {
+    "name": "afranken",
+    "url": "https://github.com/afranken"
+  },
+  "metadata": {
+    "description": "Build, migrate, and audit repository harnesses for AI-assisted coding.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "repo-harness",
+      "source": "./harness-plugin"
+    }
+  ]
+}

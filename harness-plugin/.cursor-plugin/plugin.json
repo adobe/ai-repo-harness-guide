@@ -1,0 +1,12 @@
+{
+  "name": "repo-harness",
+  "description": "Build, migrate, and audit repository harnesses for AI-assisted coding.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adobe AI Foundations",
+    "url": "https://github.com/adobe/ai-repo-harness-guide"
+  },
+  "homepage": "https://github.com/adobe/ai-repo-harness-guide",
+  "repository": "https://github.com/adobe/ai-repo-harness-guide",
+  "license": "Apache-2.0"
+}

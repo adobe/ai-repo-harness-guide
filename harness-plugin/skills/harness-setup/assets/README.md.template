@@ -1,0 +1,37 @@
+# [ServiceName]
+
+<!-- One paragraph: what this service/library is, what problem it solves, and the key
+     technical choices (language, framework, deployment mode). Two to three sentences.
+     Derive from the codebase — do not copy unchecked from existing docs. -->
+
+## Quickstart
+
+<!-- Minimum prerequisites: what must exist before the first command works.
+     Name any required environment variables. Keep to one sentence.
+     Full setup lives in docs/SETUP.md — do not duplicate it here. -->
+
+Requires [prerequisites — e.g. Docker, `ENV_VAR_NAME`]. See [docs/SETUP.md](docs/SETUP.md) for full local setup.
+
+```bash
+make build    # [brief description]
+make run      # [brief description]
+```
+
+## For Agents and Contributors
+
+<!-- Links to canonical harness files and docs.
+     Remove entries for files that don't exist. Add any repo-specific docs not listed. -->
+
+- [AGENTS.md](AGENTS.md) — roles, footguns, and module context (read this first)
+- [INVARIANTS.md](INVARIANTS.md) — hard constraints (non-negotiable)
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system design and components
+- [docs/SETUP.md](docs/SETUP.md) — full local development setup
+- [docs/TESTING.md](docs/TESTING.md) — test strategy and how to run tests
+- [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) — contribution workflow
+
+## References
+
+<!-- List external links: wikis, API specs, design docs, related services.
+     If none are found, keep this section and leave the reviewer callout below. -->
+
+> **Reviewer**: Add links to your team wiki, Jira project, API docs, and related services here. Remove this line when done.

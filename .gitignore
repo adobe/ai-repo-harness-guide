@@ -1,0 +1,12 @@
+.idea/
+
+# Zensical build artifacts
+site/
+guide/skills/harness-setup/
+guide/skills/harness-inspect/
+
+# VS Code extension packaging artifacts
+harness-plugin/*.vsix
+
+# setuptools build metadata from `pip install .`
+*.egg-info/
