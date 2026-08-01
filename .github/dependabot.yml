@@ -24,3 +24,8 @@ updates:
     # Check for updates once per day, Github defaults to random time every day.
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /harness-plugin
+    schedule:
+      interval: daily
