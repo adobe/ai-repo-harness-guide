@@ -37,41 +37,9 @@ A practical guide for building **repository harnesses** — the repository-local
 
 ## Install the skills
 
-The two skills ship with this guide and work in Claude Code, GitHub Copilot, and Cursor. One `repo-harness` plugin (source: [`harness-plugin/`](harness-plugin/)) is published through Claude- and Cursor-format marketplace manifests; the Claude-format manifest is also auto-detected by GitHub Copilot. Any agent that scans `.agents/skills/` can also read the skills with no install at all.
+The two skills ship with this guide and work in **Claude Code, GitHub Copilot, and Cursor**. Any agent that scans `.agents/skills/` reads them with no install; a `repo-harness` plugin (source: [`harness-plugin/`](harness-plugin/)) is also published through Claude- and Cursor-format marketplace manifests, and the Claude-format manifest is auto-detected by GitHub Copilot.
 
-> **Updates are not automatic** (except VS Code's periodic extension check). After the guide ships a new skill version, run the update command for your tool — see each section below.
-
-### Claude Code
-
-```
-/plugin marketplace add adobe/ai-repo-harness-guide
-/plugin install repo-harness@repo-harness
-```
-
-Then invoke with `/repo-harness:harness-setup` or `/repo-harness:harness-inspect`.
-
-Update later by enabling [auto-updates](https://code.claude.com/docs/en/discover-plugins#configure-auto-updates), or manually with `/plugin marketplace update repo-harness` (refresh the catalog) then `/plugin update repo-harness`.
-
-### GitHub Copilot
-
-**Zero-config (recommended for this repo):** Copilot natively scans `.agents/skills/` — open this repo as a VS Code workspace (or copy `.agents/skills/harness-{setup,inspect}/` into your project) and the skills are available immediately, always in sync with the checkout.
-
-**Install without cloning (CLI):** Copilot auto-detects the Claude-format marketplace manifest.
-
-```
-copilot plugin marketplace add adobe/ai-repo-harness-guide
-copilot plugin install repo-harness@repo-harness
-```
-
-Update later with `copilot plugin update repo-harness` (installs pin a version — this does not happen automatically).
-
-**Install without cloning (VS Code):** add `"chat.plugins.marketplaces": ["adobe/ai-repo-harness-guide"]` to `settings.json`, then install `repo-harness` from the **Agent Plugins** view. VS Code re-checks marketplace repos every 24h when `extensions.autoUpdate` is on, or update manually with **Extensions: Check for Extension Updates**.
-
-A standalone `.vsix` extension is a niche fallback only — see [`harness-plugin/README.md`](harness-plugin/README.md).
-
-### Cursor (2.5+)
-
-Cursor natively reads `.agents/skills/` — open this repo as a workspace (or copy `.agents/skills/harness-{setup,inspect}/` into your project). Skills are available immediately. A `.cursor-plugin/` marketplace manifest is also included for future Cursor Marketplace submission.
+**See [`guide/README.md` → Skills](guide/README.md#skills) for the canonical per-tool install and update instructions** (Claude Code, Copilot CLI/VS Code, Cursor).
 
 ---
 
@@ -83,7 +51,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). By participating you agree to the [code 
 
 Apache 2.0 — see [LICENSE](LICENSE).
 
-- **Current**: 1.0.1 (2026-08-05) — see [CHANGELOG.md](guide/CHANGELOG.md) for history
+- **Current**: 1.1.0 (2026-08-05) — see [CHANGELOG.md](guide/CHANGELOG.md) for history
 - **Site**: [opensource.adobe.com/ai-repo-harness-guide](https://opensource.adobe.com/ai-repo-harness-guide/)
 - **Author**: [Arne Franken](https://github.com/afranken)
 - **Audience**: Technical practitioners building AI-assisted systems
