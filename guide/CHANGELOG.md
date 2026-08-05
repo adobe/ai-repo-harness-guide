@@ -6,6 +6,16 @@ All notable changes to *Repository Harnesses for AI Coding Agents: A Practical G
 
 ---
 
+## 1.0.1 (2026-08-05)
+
+### Changed
+- **Install docs** ([`README.md`](../README.md), [`guide/README.md`](README.md), [`harness-plugin/README.md`](../harness-plugin/README.md)): reframed the GitHub Copilot section. Copilot auto-detects the repo's Claude-format marketplace manifest, so the same `repo-harness` plugin installs via `copilot plugin marketplace add` / `install` (CLI) or the `chat.plugins.marketplaces` setting (VS Code) — no Copilot-specific artifact required. The standalone `.vsix` extension is now documented as a niche fallback rather than the primary path.
+
+### Added
+- **Update instructions** ([`README.md`](../README.md), [`guide/README.md`](README.md)): documented that skill updates are not automatic by default (except VS Code's periodic extension check) and added the per-tool update commands — Claude Code [auto-updates](https://code.claude.com/docs/en/discover-plugins#configure-auto-updates) or manual `/plugin update`, `copilot plugin update` (Copilot CLI), and the VS Code auto-update behaviour.
+
+---
+
 ## 1.0.0 (2026-08-01)
 
 Initial public release.
