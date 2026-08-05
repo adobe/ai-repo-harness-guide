@@ -1,18 +1,18 @@
-# Repo Harness Skills — VS Code Extension (Copilot)
+# Repo Harness Skills — plugin package
 
-This extension contributes `harness-setup` and `harness-inspect` as Copilot chat skills.
+This directory is the **canonical source** of the `harness-setup` and `harness-inspect` skills. The repo's Claude-format (`.claude-plugin/`) and Cursor-format (`.cursor-plugin/`) marketplace manifests both point here, and `.agents/skills/harness-{setup,inspect}/` are symlinks into `skills/`.
 
-GitHub Copilot already reads `.agents/skills/` natively in any open workspace, so for most users **no extension is needed**. This scaffold exists for users who want the skills available globally across all workspaces without cloning the guide repo.
+# Repo Harness Skills — plugin package
 
-## Install options
+This directory is the **canonical source** of the `harness-setup` and `harness-inspect` skills. The repo's Claude-format (`.claude-plugin/`) and Cursor-format (`.cursor-plugin/`) marketplace manifests both point here, and `.agents/skills/harness-{setup,inspect}/` are symlinks into `skills/`.
 
-### Option 1 — workspace-scoped (no extension needed)
+## Installing the skills
 
-Open the guide repo as a VS Code workspace (or copy `.agents/skills/harness-{setup,inspect}/` into your project). Copilot discovers the skills automatically.
+For per-tool install and update instructions (Claude Code, GitHub Copilot, Cursor), see the canonical page: **[`guide/README.md` → Skills](https://github.com/adobe/ai-repo-harness-guide/blob/main/guide/README.md#skills)**.
 
-### Option 2 — global install via sideload
+Most users need nothing from this directory: Copilot reads `.agents/skills/` natively in any open workspace, and the same skills install without cloning via the plugin marketplace (Copilot auto-detects the Claude-format manifest). The `.vsix` extension below is a **niche fallback** — only useful if you want the skills globally across all workspaces *and* prefer a VS Code Marketplace extension over the plugin marketplace. It is heavier and less portable.
 
-Build a `.vsix` and install it globally:
+### Building the `.vsix` (fallback only)
 
 ```bash
 npm install -g @vscode/vsce
@@ -21,19 +21,13 @@ vsce package
 code --install-extension repo-harness-1.0.0.vsix
 ```
 
-Then invoke in Copilot chat:
-
-```
-/harness-setup
-/harness-inspect
-```
-
-## Marketplace submission
-
-This extension is not yet published to the VS Code Marketplace. Publish it with:
+Then invoke `/harness-setup` or `/harness-inspect` in Copilot chat. This extension is not published to the VS Code Marketplace; publish with `vsce publish` if desired (see [publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)).
 
 ```bash
-vsce publish
+npm install -g @vscode/vsce
+cd harness-plugin
+vsce package
+code --install-extension repo-harness-1.0.0.vsix
 ```
 
-See [publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) for setup requirements (publisher account, personal access token).
+Then invoke `/harness-setup` or `/harness-inspect` in Copilot chat. This extension is not published to the VS Code Marketplace; publish with `vsce publish` if desired (see [publishing extensions](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)).

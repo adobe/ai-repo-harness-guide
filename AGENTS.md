@@ -77,14 +77,7 @@ Files that complement the numbered chapters but live outside the series:
 
 ## Module Context
 
-The skills (`harness-setup`, `harness-inspect`) live in this repo at `.agents/skills/`. Install via the Claude Code plugin:
-
-```
-/plugin marketplace add adobe/ai-repo-harness-guide
-/plugin install repo-harness
-```
-
-Cursor (2.5+) and GitHub Copilot read `.agents/skills/` natively — open this repo as a workspace or copy the skill directories into your project. See `guide/README.md` for per-tool install details.
+The skills (`harness-setup`, `harness-inspect`) live in this repo at `.agents/skills/`. Cursor (2.5+) and GitHub Copilot read `.agents/skills/` natively; Claude Code and the Copilot CLI install the same `repo-harness` plugin from the Claude-format marketplace. See [`guide/README.md` → Skills](https://github.com/adobe/ai-repo-harness-guide/blob/main/guide/README.md#skills) for the canonical per-tool install and update instructions.
 
 Distribution wrappers live at `.claude-plugin/`, `.cursor-plugin/`, `harness-plugin/` — they're manifests, not agent guidance.
 

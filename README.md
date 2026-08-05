@@ -31,32 +31,15 @@ A practical guide for building **repository harnesses** — the repository-local
 | [`.agents/skills/`](.agents/skills/) | `harness-setup` and `harness-inspect` skills for Claude Code, Cursor, and Copilot — symlinked from `harness-plugin/skills/`, their canonical source |
 | [`.claude-plugin/`](.claude-plugin/) | Claude Code plugin manifest |
 | [`.cursor-plugin/`](.cursor-plugin/) | Cursor plugin manifest |
-| [`harness-plugin/`](harness-plugin/) | VS Code / GitHub Copilot extension packaging |
+| [`harness-plugin/`](harness-plugin/) | Canonical skill source (both marketplaces point here) plus Claude/Cursor plugin manifests and an optional VS Code/Copilot extension |
 
 ---
 
 ## Install the skills
 
-The two skills ship with this guide and work in Claude Code, Cursor, and GitHub Copilot.
+The two skills ship with this guide and work in **Claude Code, GitHub Copilot, and Cursor**. Any agent that scans `.agents/skills/` reads them with no install; a `repo-harness` plugin (source: [`harness-plugin/`](harness-plugin/)) is also published through Claude- and Cursor-format marketplace manifests, and the Claude-format manifest is auto-detected by GitHub Copilot.
 
-### Claude Code
-
-```
-/plugin marketplace add adobe/ai-repo-harness-guide
-/plugin install repo-harness
-```
-
-Then invoke with `/repo-harness:harness-setup` or `/repo-harness:harness-inspect`.
-
-### Cursor (2.5+)
-
-Cursor natively reads `.agents/skills/` — open this repo as a workspace (or copy `.agents/skills/harness-{setup,inspect}/` into your project). Skills are available immediately.
-
-### GitHub Copilot
-
-Copilot natively reads `.agents/skills/` — open this repo as a VS Code workspace (or copy `.agents/skills/harness-{setup,inspect}/` into your project). Skills are available immediately.
-
-For global install across all workspaces, see [`harness-plugin/README.md`](harness-plugin/README.md).
+**See [`guide/README.md` → Skills](guide/README.md#skills) for the canonical per-tool install and update instructions** (Claude Code, Copilot CLI/VS Code, Cursor).
 
 ---
 
@@ -68,7 +51,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). By participating you agree to the [code 
 
 Apache 2.0 — see [LICENSE](LICENSE).
 
-- **Current**: 1.0.0 (2026-08-01) — see [CHANGELOG.md](guide/CHANGELOG.md) for history
+- **Current**: 1.1.0 (2026-08-05) — see [CHANGELOG.md](guide/CHANGELOG.md) for history
 - **Site**: [opensource.adobe.com/ai-repo-harness-guide](https://opensource.adobe.com/ai-repo-harness-guide/)
 - **Author**: [Arne Franken](https://github.com/afranken)
 - **Audience**: Technical practitioners building AI-assisted systems

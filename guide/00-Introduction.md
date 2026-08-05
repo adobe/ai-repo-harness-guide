@@ -6,9 +6,11 @@ This guide covers **repository harnesses**—the repository-local control system
 
 ## Why This Matters
 
-**For engineers**: AI coding agents are only as reliable as the system around them. Without explicit constraints, a capable model will confidently make the wrong call — ignoring a security invariant, repeating a mistake you've already fixed, or choosing the wrong abstraction because no one told it not to. A harness is the infrastructure that closes the loop: it encodes what agents need to know, what they must not do, and how to verify their output. With it, agents catch their own mistakes. Without it, you catch them instead.
+AI coding agents are only as reliable as the system around them. Without explicit constraints, a capable model will confidently make the wrong call — ignoring a security invariant, repeating a mistake you've already fixed, or choosing the wrong abstraction because no one told it not to. A harness is the infrastructure that closes the loop: it encodes what agents need to know, what they must not do, and how to verify their output. With it, agents catch their own mistakes. Without it, you catch them instead.
 
-**For managers**: Teams that get real productivity gains from AI aren't just using better models — they've built infrastructure around those models. The bottleneck isn't capability; it's predictability. A harness scopes what agents can do autonomously, enforces your quality and compliance constraints regardless of who wrote the code, and keeps humans in the loop for decisions that matter. The difference between "we tried AI coding tools and it didn't work out" and "AI tools work for us" is usually the harness.
+That reliability comes from putting human-reviewed context into the codebase itself. Once someone captures how the repository is structured, what its conventions are, and which constraints must hold — and confirms it's right — every agent works from the same approved starting point, and its responses grow far more predictable from one session to the next. It also cuts repeated work: because those facts are written down and reused, agents spend less of each session rediscovering the same things about the repository.
+
+Predictability is what separates teams that get real gains from AI from those that don't. The bottleneck usually isn't the model's capability; it's whether its behavior can be trusted and repeated. A harness scopes what agents can do autonomously, enforces quality and compliance constraints regardless of who — or what — wrote the code, and keeps humans in the loop for the decisions that matter. The difference between "we tried AI coding tools and it didn't work out" and "AI tools work for us" is usually the harness.
 
 ---
 
